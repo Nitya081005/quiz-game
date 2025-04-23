@@ -1,0 +1,26 @@
+questions = {
+    "What is the capital of France?": "a",
+    "Which language is used for web apps?": "b",
+    "What does CPU stand for?": "c"
+}
+
+options = [
+    ["a. Paris", "b. Rome", "c. Berlin"],
+    ["a. Python", "b. JavaScript", "c. C++"],
+    ["a. Central Programming Unit", "b. Control Panel Unit", "c. Central Processing Unit"]
+]
+
+score = 0
+
+for i, (question, answer) in enumerate(questions.items()):
+    print(f"\nQ{i+1}: {question}")
+    for opt in options[i]:
+        print(opt)
+    user_answer = input("Enter your answer (a/b/c): ").lower()
+    if user_answer == answer:
+        print("Correct!")
+        score += 1
+    else:
+        print("Wrong!")
+
+print(f"\nYour final score is: {score}/{len(questions)}")
